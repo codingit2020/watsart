@@ -1,0 +1,344 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>The Bak-one Website Template | Home :: w3layouts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/imgeffect.css" />
+<script src="js/jquery.min.js"></script>
+<!-- start gallery Script -->
+	<script type="text/javascript" src="js/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+				<script type="text/javascript">
+				$(function () {
+					
+					var filterList = {
+					
+						init: function () {
+						
+							// MixItUp plugin
+							// http://mixitup.io
+							$('#portfoliolist').mixitup({
+								targetSelector: '.portfolio',
+								filterSelector: '.filter',
+								effects: ['fade'],
+								easing: 'snap',
+								// call the hover effect
+								onMixEnd: filterList.hoverEffect()
+							});				
+						
+						},
+						
+						hoverEffect: function () {
+						
+							// Simple parallax effect
+							$('#portfoliolist .portfolio').hover(
+								function () {
+									$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+									$(this).find('img').stop().animate({top: 0}, 500, 'easeOutQuad');				
+								},
+								function () {
+									$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeInQuad');
+									$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+								}		
+							);				
+						
+						}
+			
+					};
+					
+					// Run the show!
+					filterList.init();
+					
+					
+				});	
+				</script>
+				<!-- Add fancyBox main JS and CSS files -->
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+				<link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+						<script>
+							$(document).ready(function() {
+								$('.popup-with-zoom-anim').magnificPopup({
+									type: 'inline',
+									fixedContentPos: false,
+									fixedBgPos: true,
+									overflowY: 'auto',
+									closeBtnInside: true,
+									preloader: false,
+									midClick: true,
+									removalDelay: 300,
+									mainClass: 'my-mfp-zoom-in'
+							});
+						});
+						</script>
+				<script type="text/javascript" src="js/move-top.js"></script>
+				<script type="text/javascript" src="js/easing.js"></script>
+				<!----end gallery----------->
+				
+		   	<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){		
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+					});
+				});
+			</script>
+        <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+</head>
+
+<body>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!--------start-logo------>
+							<div class="logo">
+								<a href="index.html"><img src="images/watsart-logo.png" alt="" height="80px" /></a>
+							</div>	
+							<!--------end-logo--------->
+							<!----start-nav-------->	
+							<div class="nav">
+								<ul>
+								   <li><a href="#home" class="scroll">Login</a></li>
+								   <li class="active"><a href="#portfolio" class="scroll">Signup</a></li>
+								   <li><a href="#contact" class="scroll">Contact</a></li>
+                                   <li><a href="#about" class="scroll"><img src="images/guy-8.jpg" height="50px"></a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+						</div>
+					</div>
+			
+		<!------end-header------------>
+
+<!--start portfolio------>
+	<div class="wrap" id="portfolio">
+				<div class="main">
+					<!-- start gallery  -->
+							<div class="gallery1">
+
+			<!---start-content----->
+                       <br>         
+                                <p><h1>Sam's art spots</h1></p><br><br>
+
+       <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: new google.maps.LatLng(37.7857,-122.4011),
+          mapTypeId: 'terrain'
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+      window.eqfeed_callback = function(results) {
+        for (var i = 0; i < results.features.length; i++) {
+          var coords = results.features[i].geometry.coordinates;
+          var latLng = new google.maps.LatLng(coords[1],coords[0]);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCepfnw8vrurHYkQpzoca8ntdL2lrClG1E&callback=initMap">
+    </script>
+                       
+                    </div>                                
+                                
+
+		</div>
+	</div><!-- container -->
+	<script type="text/javascript" src="js/fliplightbox.min.js"></script>
+	<script type="text/javascript">$('body').flipLightBox()</script>
+	<div class="clear"> </div>
+	</div>
+	</div>
+	</div>
+</div>
+<!---End-gallery----->
+<!-----start-about-------->
+
+<div class="about" id="about">
+	<div class="wrap">
+	<h2> We love WatsArt!</h2>
+	<p>Imagine leaving a voice review of your favorite experiences for your friends ... without needing to type!</p>
+		<div class="about-grids">
+			<div class="grid">
+				<div class="dc_zoom_css">
+				<span class="roll_css6">
+					<div class="social">
+						<ul>
+							<li><a class="sharefacebook" href="#"> </a> </li>
+							<li><a class="sharetwitter" href="#"> </a> </li>
+							<li><a class="sharetgoogle" href="#"> </a> </li>
+							<li><a class="sharedrible" href="#"> </a> </li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</span>
+				<img class="post-person" src="images/img1.jpg">
+				</div>
+				<div class="desc">
+					<h3>Sarah</h3>
+					<p>Explorer</p>
+					<p>Love sharing my secret spots with my friends, on-the-fly!</p>
+				</div>
+		
+			</div>
+			<div class="grid">
+				<div class="dc_zoom_css">
+				<span class="roll_css6">
+					<div class="social">
+						<ul>
+							<li><a class="sharefacebook" href="#"> </a> </li>
+							<li><a class="sharetwitter" href="#"> </a> </li>
+							<li><a class="sharetgoogle" href="#"> </a> </li>
+							<li><a class="sharedrible" href="#"> </a> </li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</span>
+				<img class="post-person" src="images/img2.jpg">
+				</div>
+				<div class="desc">
+					<h3>Joe</h3>
+					<p>Big spender</p>
+					<p>Can't wait to use this with Airpods! Hands-free reviews! So cool!</p>
+				</div>
+			</div>
+			<div class="grid">
+				<div class="dc_zoom_css">
+				<span class="roll_css6">
+					<div class="social">
+						<ul>
+							<li><a class="sharefacebook" href="#"> </a> </li>
+							<li><a class="sharetwitter" href="#"> </a> </li>
+							<li><a class="sharetgoogle" href="#"> </a> </li>
+							<li><a class="sharedrible" href="#"> </a> </li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</span>
+				<img class="post-person" src="images/img3.jpg">
+				</div>
+				<div class="desc">
+					<h3>Mark</h3>
+					<p>Friends magnet</p>
+					<p>Now my friends and I know exactly how we felt about things when they happened. The text to speech replay is awesome!</p>
+				</div>
+			</div>
+			<div class="clear"> </div>
+		</div>
+	</div>
+</div>
+<!---------end-about------------->
+<div class="contact" id="contact">
+	<div class="wrap">
+		<h2>Contact Us</h2>
+		<h4>The WatsArt crew are like IBM Watson: "always on," improving on things we've learnt from customers and making it better!</h4>
+		<div class="section group">
+			  <div class="col span_2_of_3">
+				  <div class="contact-form">
+				  	  <form method="post" action="#">
+					    	
+					    		<input type="text" class="textbox" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your  Name';}">
+						    	<input type="text" class="textbox" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
+						    	<div class="clear"> </div>
+						   
+						    <div>
+						    	<textarea value="Your Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message';}">Your Message...</textarea>
+						    </div>
+						  <span><input type="submit" class="" value="Submit"></span>
+						  <div class="clear"></div>
+					    </form>
+				  </div>
+  				</div>
+				<div class="col span_1_of_3">
+					<div class="company_address">
+				     	<h5>INFORMATION</h5>
+						<ul class="list3">
+							<li>
+								<img src="images/location.png" alt=""/>
+								<div class="extra-wrap">
+								  <p>Cognitive Builder, Galvanize</p>
+								  <p>44 Tehama Street</p>
+								  <p>San Francisco, CA 94105</p>
+								</div>
+								<div class="clear"> </div>
+							</li>
+							
+							<li>
+								<img src="images/phone.png" alt=""/>
+								<div class="extra-wrap">
+									<p>+1 415 805 1888</p>
+								</div>
+								<div class="clear"> </div>
+							</li>
+
+							<li>
+								<img src="images/mail.png" alt=""/>
+								<div class="extra-wrap">
+									<p> <a href="mailto:info@mycompany.com"> info(at)watsart.com</a></p>
+								</div>
+								<div class="clear"> </div>
+							</li>
+						</ul>
+				   </div>
+				 </div>
+				 <div class="clear"></div>
+			  </div>
+			  </div>
+     	</div>
+     <div class="footer-bottom">
+     	<div class="wrap">
+        <div class="copy">
+		 		    <p class="copy">&#169 WatsArt : powered by IBM Cognitive Builder | Version 1.voice  <a href="http://w3layouts.com" target="_blank">| w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+							});
+						</script>
+		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"> </span></a>
+		 <script src="js/jquery.scrollTo.js"></script>
+		</div>
+	</div>
+</body>
+</html>
